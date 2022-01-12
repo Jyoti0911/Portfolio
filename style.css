@@ -486,16 +486,16 @@ p {
 }
 
 .home .home-content .text-1{
-    font-size: 27px;
+    font-size: 55px;
 }
 .home .home-content .text-2{
-    font-size: 75px;
+    font-size: 55px;
     font-weight: 600;
-    margin-left: -3px;
+    
 }
 .home .home-content .text-3{
-    font-size: 40px;
-    margin: 5px 0;
+    font-size: 30px;
+    
 }
 .home .home-content .text-3 span{
     color: crimson;
@@ -575,22 +575,22 @@ section .title::after{
 }
 .bars{
 	padding: 10px;
-	background-color:rgb(18, 5, 196);
+	background-color:rgb(202, 5, 120);
 	box-shadow: darkgray;
 	border-radius: 20px;
 }
 
 .info{
-	font-size: 25px;
+	font-size: 20px;
 	font-weight: bold;
-	color: crimson;
+	color: rgb(22, 20, 21);
 }
 .skills .skills-content .column{
-    width: calc(50% - 30px);
+    width: 50%;
 }
 
 .skills .skills-content .right .bars{
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 }
 .skills .skills-content .right .info{
     display: flex;
@@ -614,7 +614,7 @@ section .title::after{
     height: 100%;
     left: 0;
     top: 0;
-    background: crimson;
+    background: rgb(127, 220, 20);
 }
 .skills-content .right .html::before{
     width: 90%;
@@ -644,22 +644,49 @@ section .title::after{
 
 @media (max-width: 947px){
 	.home .home-content .text-2{
-        font-size: 70px;
+        font-size: 55px;
     }
     .home .home-content .text-3{
-        font-size: 35px;
+        font-size: 25px;
     }
     .home .home-content a{
         font-size: 23px;
-        padding: 10px 30px;
+        padding: 10px 20px;
     }
     .skills .skills-content .column{
         width: 100%;
         margin-bottom: 35px;
     }
 }
+@media (max-width: 690px) {
+    .max-width{
+        padding: 0 23px;
+    }
+    .home .home-content .text-2{
+        font-size: 35px;
+    }
+    .home .home-content .text-3{
+        font-size: 22px;
+    }
+    .home .home-content a{
+        font-size: 20px;
+    }
+	.home .home-content .text-1{
+        font-size: 35px;
+    }
 
-
+}
+@media (max-width: 500px) {
+    .home .home-content .text-2{
+        font-size: 35px;
+    }
+    .home .home-content .text-3{
+        font-size: 22px;
+    }
+	.home .home-content .text-1{
+        font-size: 35px;
+    }
+}
 /*education  */
 
  
@@ -669,15 +696,14 @@ section .title::after{
 	padding: 10rem 0;
 	background-color: rgb(123, 12, 226);
 }
-#projects .item {
+#projects .item{
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	max-width: 1000px;
+	max-width: 800px;
 	margin: 0 auto;
 	margin-bottom: 15rem;
-	/* gap: 2rem; */
-}
+	  }
 
 #projects .item:nth-of-type(even) {
 	flex-direction: row-reverse;
@@ -720,6 +746,7 @@ section .title::after{
 #projects .item .left .img img {
 	object-fit: cover;
 	transition: 0.3s ease transform;
+	max-width: 800px;
 }
 #projects .item:hover .left .img img {
 	transform: scale(1.1);
@@ -754,7 +781,7 @@ section .title::after{
 		flex-direction: column;
 	}
 	#projects .item .left {
-		width: 100%;
+		width: 80%;
 	}
 	#projects .item .right {
 		margin-left: 0;
