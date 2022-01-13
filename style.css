@@ -663,7 +663,7 @@ section .title::after{
         padding: 0 23px;
     }
     .home .home-content .text-2{
-        font-size: 35px;
+        font-size: 45px;
     }
     .home .home-content .text-3{
         font-size: 22px;
@@ -672,19 +672,19 @@ section .title::after{
         font-size: 20px;
     }
 	.home .home-content .text-1{
-        font-size: 35px;
+        font-size: 45px;
     }
 
 }
 @media (max-width: 500px) {
     .home .home-content .text-2{
-        font-size: 35px;
+        font-size: 45px;
     }
     .home .home-content .text-3{
         font-size: 22px;
     }
 	.home .home-content .text-1{
-        font-size: 35px;
+        font-size: 45px;
     }
 }
 /*education  */
