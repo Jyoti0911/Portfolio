@@ -10,11 +10,11 @@
 :root::-webkit-scrollbar{
   display: none;
 } 
-body {
+* {
   padding: 0px;
   font-family: 'Space Mono', monospace;
   margin: 0px;
-  box-sizing:border-box;
+  box-sizing: border-box;
 }
 nav {
   position: fixed;
