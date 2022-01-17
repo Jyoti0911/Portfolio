@@ -95,7 +95,7 @@ nav > ul {
 }
 h1 {
   margin: 0;
-  font-size: 5.5em;
+  font-size: 5.5rem;
   color: #D7B942;
 }
 .overlay-desc {
@@ -117,10 +117,10 @@ h1 {
   justify-content: center;
   align-items: center;
 }
-/*.fab {
+.fab {
   font-size: 40px;
   color: white;
-}*/
+}
 .sm-icons-wrapper > a {
   transition: 0.2s ease-in-out;
 }
@@ -444,7 +444,7 @@ h2 {
     max-width: none;
   }
   .skill-card{
-    max-width: 650px;
+    max-width: none;
   }
   #cert-pill {
     display: none;
@@ -472,7 +472,7 @@ h2 {
 }
 @media only screen and (max-width: 720px) {
   .skill-card{
-    max-width: 650px;
+    max-width: none;
   }
   .quote-text, .quote-credit {
     font-size: 20px;
