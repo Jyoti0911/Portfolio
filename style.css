@@ -280,7 +280,7 @@ h1 {
   align-items: center;
 }
 .fab {
-  font-size: 40px;
+  font-size: 50px;
   color: white;
 }
 .sm-icons-wrapper > a {
@@ -633,7 +633,7 @@ h2 {
     backdrop-filter: none;
     box-shadow: none;
   }
-  h1 {
+ .header h1{
     font-size: 55px;
   }
   .overlay-desc {
@@ -644,7 +644,7 @@ h2 {
     width: 100%;
     max-width: 275px;
   }
-  .fab {
+  .header.fab{
     font-size: 30px;
   }
 }
