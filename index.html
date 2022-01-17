@@ -18,17 +18,23 @@
 
 <body>
   <!-- Test #x -->
-  <header id="welcome-section">
-    <nav id="navbar">
-      <ul>
-        <!-- Some of the ID's may have been changed due to FCC certifcation -->
-        <li class="nav-pill"><a class="nav-pill-text" href="#about">About me</a></li>
-        <li class="nav-pill"><a class="nav-pill-text" href="#skill-section">Skill set</a></li>
-        <li class="nav-pill"><a class="nav-pill-text" href="#projects">Projects</a></li>
-        <li class="nav-pill" ><a class="nav-pill-text" href="#education">Education</a></li>
-        <li class="nav-pill" ><a class="nav-pill-text" href="#contact-section">Contact Me</a></li>
-        <li class="nav-pill" id="contact-pill"><a class="nav-pill-text" href="#contact-section">Contact Me</a></li>
-      </ul>
+    <nav id="header">
+      <div class="header container">
+        <div class="nav-bar">
+          
+          <div class="nav-list">
+            <div class="hamburger">
+              
+            </div>
+            <ul>
+              <li><a href="#hero" data-after="Home">Home</a></li>
+              <li><a href="#projects" data-after="Projects">Projects</a></li>
+              <li><a href="#about" data-after="About">About</a></li>
+              <li><a href="#contact" data-after="Contact">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </nav>
     <div class="header-image-container">
       <div class="header-image-overlay">
@@ -43,7 +49,6 @@
         </div>
       </div>
     </div>
-  </header>
   <main>
     <!-- About Section -->
     <section id="about">
@@ -235,10 +240,7 @@
           <img src="img/project-3.png" alt="Library Management System">
           <div class="project-desc">
             <h4>Library Management System</h4>
-            <p>The project “Library Management System” is developed on Java, swing and MySQL which
-              mainly focuses on basic operation in library like adding new books, issue books, searching
-              books and members and return books and also added statistics page in this page we can
-              see details of issue books and return books.</p>
+            <p>The project “Library Management System” is developed on Java, swing and MySQL.</p>
             <a href="#" target="_blank" class="view-project-button">View
               Project</a>
           </div>
