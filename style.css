@@ -396,11 +396,11 @@ h2 {
   
 }
 .skill-bar-wrapper > .fab, .skill-bar-wrapper .fas {
-  font-size: 22px;
+  font-size: 38px;
   margin-right: 3%;
 }
 .bar-container {
-  height: 27px;
+  height: 38px;
   width: 90%;
   margin-left: 10px;
   border: 1px solid black;
@@ -414,17 +414,17 @@ h2 {
   border-bottom-left-radius: 20px;
 }
 .bar > p {
-  color: white;
-  font-size: 15px;
-  text-shadow: 2px 2px 5px black;
-  padding: 0;
-  text-align: center; /* Needed if skill-card text-align is not set to center. */
-  margin: auto;
+  height: 38px;
+  width: 90%;
+  margin-left: 10px;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 0px;
 }
-
+/*
 .skill-card > p {
   text-align: justify;
-} 
+} /*
 #html-bar {
   width: 85%;
   border: 1px solid #E64E2C;
@@ -630,7 +630,7 @@ h2 {
     box-shadow: none;
   }
   h1 {
-    font-size: 5em;
+    font-size: 55;
   }
   .overlay-desc {
     font-size: 50px;
