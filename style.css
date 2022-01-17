@@ -10,12 +10,13 @@
 :root::-webkit-scrollbar{
   display: none;
 } 
-body {
-  padding: 0px;
+* {
+  padding: 0;
   font-family: 'Space Mono', monospace;
-  margin: 0px;
+  margin: 0;
+  box-sizing: border-box;
 }
-nav {
+/*nav {
   position: fixed;
   z-index: 9;
   background-color: black;
@@ -28,7 +29,7 @@ nav > ul {
   padding: 0;
   margin: 0;
 }
-.nav-pill {
+.nav-list ul{
   flex: 1;
   list-style-type: none;
   padding: 15px;
@@ -36,7 +37,7 @@ nav > ul {
   background-color: black;
   transition: 0.3s ease-in-out;
 }
-.nav-pill:hover {
+.nav-list ul:hover {
   transform: scale(1.1);
   box-shadow: 3px 3px 6px black;
   border: 1px solid white;
@@ -68,6 +69,161 @@ nav > ul {
     text-shadow: 2px 2px 100px white;
   }
 }
+*/
+/* Header section */
+#header {
+	position: fixed;
+	z-index: 1000;
+	left: 0;
+	top: 0;
+  width: 100%;
+	height: auto;
+}
+
+#header .header {
+	min-height: 8vh;
+	background-color: rgba(31, 30, 30, 0.24);
+	transition: 0.3s ease background-color;
+}
+#header .nav-bar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	height: 100%;
+	max-width: 1300px;
+	padding: 0 10px;
+}
+#header .nav-list ul {
+  flex: 1;
+  list-style-type: none;
+  padding: 10px;
+  text-align: center;
+  background-color: black;
+  transition: 0.3s ease-in-out;
+}
+#header .nav-list ul.active {
+	left: 0%;
+}
+#header .nav-list ul a {
+	font-size: 2.5rem;
+	font-weight: 500;
+	letter-spacing: 0.2rem;
+	text-decoration: none;
+	color: white;
+	text-transform: uppercase;
+	padding: 20px;
+	display: block;
+}
+#header .nav-list ul a::after {
+	content: attr(data-after);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(0);
+	color: rgba(240, 248, 255, 0.021);
+	font-size: 13rem;
+	letter-spacing: 50px;
+	z-index: -1;
+	transition: 0.3s ease letter-spacing;
+}
+#header .nav-list ul li:hover a::after {
+	transform: translate(-50%, -50%) scale(1);
+	letter-spacing: initial;
+}
+#header .nav-list ul li:hover a {
+	color: crimson;
+}
+#header .hamburger {
+	height: 60px;
+	width: 60px;
+	display: inline-block;
+	border: 3px solid white;
+	border-radius: 50%;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 100;
+	cursor: pointer;
+	transform: scale(0.8);
+	margin-right: 20px;
+}
+#header .hamburger:after {
+	position: absolute;
+	content: '';
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+	border: 3px solid white;
+	animation: hamburger_puls 1s ease infinite;
+}
+#header .hamburger .bar {
+	height: 2px;
+	width: 30px;
+	position: relative;
+	background-color: white;
+	z-index: -1;
+}
+#header .hamburger .bar::after,
+#header .hamburger .bar::before {
+	content: '';
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	background-color: white;
+	transition: 0.3s ease;
+	transition-property: top, bottom;
+}
+#header .hamburger .bar::after {
+	top: 8px;
+}
+#header .hamburger .bar::before {
+	bottom: 8px;
+}
+#header .hamburger.active .bar::before {
+	bottom: 0;
+}
+#header .hamburger.active .bar::after {
+	top: 0;
+}
+/* End Header section */
+
+/* Keyframes */
+@keyframes hamburger_puls {
+	0% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	100% {
+		opacity: 0;
+		transform: scale(1.4);
+	}
+}
+@keyframes text_reveal_box {
+	50% {
+		width: 100%;
+		left: 0;
+	}
+	100% {
+		width: 0;
+		left: 100%;
+	}
+}
+@keyframes text_reveal {
+	100% {
+		color: white;
+	}
+}
+@keyframes text_reveal_name {
+	100% {
+		color: crimson;
+		font-weight: 500;
+	}
+}
+/* End Keyframes */
+
 
 /* bannner image */
 
@@ -94,11 +250,11 @@ nav > ul {
 }
 h1 {
   margin: 0;
-  font-size: 5.5em;
+  font-size: 7.5em;
   color: #D7B942;
 }
 .overlay-desc {
-  font-size: 2.5em;
+  font-size: 3em;
   margin: 0;
 }
 .overlay-hr {
@@ -116,10 +272,10 @@ h1 {
   justify-content: center;
   align-items: center;
 }
-/*.fab {
+.fab {
   font-size: 40px;
   color: white;
-}*/
+}
 .sm-icons-wrapper > a {
   transition: 0.2s ease-in-out;
 }
@@ -127,6 +283,11 @@ h1 {
   transform: scale(1.1);
   text-shadow: 3px 3px 6px black;
 }
+
+
+/* End Header section */
+
+
 
 /* Sections */
 
@@ -205,10 +366,9 @@ h2 {
   flex-direction: column;
   align-items: center;
   background-color: white;
-  width: 100%;
-  max-width: 400px;
+  width: 450px;
   border: 1px solid black;
-  box-shadow: 2px 2px 5px rgb(65, 5, 206);
+  box-shadow: 2px 2px 5px black;
   text-align: left; /* Changed from center to left */
   padding: 20px;
   border-radius: 10px;
@@ -254,14 +414,10 @@ h2 {
   text-align: center; /* Needed if skill-card text-align is not set to center. */
   margin: auto;
 }
-#projects .fas{
-  color: rgb(17, 16, 16);
-  font-size: 22px;
 
-}
-/* .skill-card > p {
+.skill-card > p {
   text-align: justify;
-} */
+} 
 #html-bar {
   width: 85%;
   border: 1px solid #E64E2C;
@@ -360,16 +516,14 @@ h2 {
   position: absolute;
   top: 0;
   left: 0;
-  
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  
   opacity: 0;
   background-color: black;
-  font-size: 15px;
-  padding: 5%;
+  font-size: 20px;
+  padding: 10px;
   width: 100%;
   height: 100%;
   color: white;
@@ -416,7 +570,7 @@ h2 {
 }
 #projects h4{
   color: #E64E2C;
-  font-size: 20px;
+  font-size: 29px;
 }
 /* Contact Me */
 
@@ -427,7 +581,28 @@ h2 {
 }
 
 /* Footer */
-
+@media only screen and (min-width: 1200px) {
+	/* header */
+	#header .hamburger {
+		display: none;
+	}
+  #header .nav-list ul {
+		position: initial;
+		display: block;
+		height: auto;
+		width: fit-content;
+		background-color: transparent;
+	}
+	#header .nav-list ul li {
+		display: inline-block;
+	}
+	#header .nav-list ul li a {
+		font-size: 1.8rem;
+	}
+	#header .nav-list ul a:after {
+		display: none;
+	}
+}
 @media screen and (max-width: 1280px) {
   #contact-pill {
     display: none;
@@ -439,12 +614,6 @@ h2 {
   .project-tile {
     max-width: none;
   }
-  .cert-card {
-    max-width: none;
-  }
-  .skill-card{
-    max-width: 650px;
-  }
   #cert-pill {
     display: none;
     flex: 0;
@@ -455,10 +624,10 @@ h2 {
     box-shadow: none;
   }
   h1 {
-    font-size: 55px;
+    font-size: 5em;
   }
   .overlay-desc {
-    font-size: 30px;
+    font-size: 50px;
   }
   .overlay-hr {
     margin: 20px auto;
@@ -470,34 +639,9 @@ h2 {
   }
 }
 @media only screen and (max-width: 720px) {
-  .skill-card{
-    max-width: 650px;
-  }
   .quote-text, .quote-credit {
     font-size: 20px;
   }
-  #about .about {
-	flex-direction: row;
-}
-#about .col-left {
-	width: 600px;
-	height: 400px;
-	padding-left: 60px;
-}
-#about .about .col-left .about-img::after {
-	left: -45px;
-	top: 34px;
-	height: 98%;
-	width: 98%;
-	border: 10px solid crimson;
-}
-#about .col-right {
-	text-align: left;
-	padding: 30px;
-}
-#about .col-right h1 {
-	text-align: left;
-}
 }
 @media only screen and (max-width: 550px) {
   #contact-section > p, contact-section > i {
@@ -506,10 +650,7 @@ h2 {
   .text-wrapper-desc {
     text-align: left;
   }
-  nav {
-    display: none;
-  }
-  .card-container {
+  #skill-section .card-container {
     margin: 10px auto;
     gap: 20px;
   }
