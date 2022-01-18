@@ -90,6 +90,8 @@ nav > ul {
 }
 #header .header {
 	min-height: 8vh;
+	background-color: rgba(231, 37, 166, 0.24);
+	transition: 0.3s ease background-color;
 }
 #header .nav-bar {
 	display: flex;
@@ -103,6 +105,7 @@ nav > ul {
 #header .nav-list ul {
 	list-style: none;
 	position: absolute;
+	background-color: rgb(31, 30, 31);
 	width: 100vw;
 	height: 100vh;
 	left: 100%;
@@ -134,6 +137,7 @@ nav > ul {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%) scale(0);
+	color: rgba(231, 42, 184, 0.021);
 	font-size: 3rem;
 	letter-spacing: 10px;
 	z-index: -1;
@@ -284,6 +288,7 @@ h1 {
   justify-content: center;
   align-items: center;
 }
+
 .sm-icons-wrapper > a {
   transition: 0.2s ease-in-out;
 }
