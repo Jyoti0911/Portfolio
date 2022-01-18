@@ -12,9 +12,9 @@
 } 
 * {
   padding: 0;
-  font-family: 'Space Mono', monospace;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 /*nav {
   position: fixed;
@@ -71,6 +71,15 @@ nav > ul {
 }
 */
 /* Header section */
+.brand h1 {
+	font-size: 3rem;
+	text-transform: uppercase;
+	color: white;
+}
+.brand h1 span {
+	color: crimson;
+}
+
 #header {
 	position: fixed;
 	z-index: 1000;
@@ -81,7 +90,7 @@ nav > ul {
 }
 #header .header {
 	min-height: 8vh;
-	background-color: rgba(31, 30, 30, 0.24);
+	background-color: rgba(231, 37, 166, 0.24);
 	transition: 0.3s ease background-color;
 }
 #header .nav-bar {
@@ -96,7 +105,7 @@ nav > ul {
 #header .nav-list ul {
 	list-style: none;
 	position: absolute;
-	background-color: rgb(31, 30, 30);
+	background-color: rgb(31, 30, 31);
 	width: 100vw;
 	height: 100vh;
 	left: 100%;
@@ -128,9 +137,9 @@ nav > ul {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%) scale(0);
-	color: rgba(240, 248, 255, 0.021);
-	font-size: 13rem;
-	letter-spacing: 50px;
+	color: rgba(231, 42, 184, 0.021);
+	font-size: 3rem;
+	letter-spacing: 10px;
 	z-index: -1;
 	transition: 0.3s ease letter-spacing;
 }
@@ -257,7 +266,7 @@ nav > ul {
 }
 h1 {
   margin: 0;
-  font-size: 7.5em;
+  font-size: 5em;
   color: #D7B942;
 }
 .overlay-desc {
@@ -353,8 +362,8 @@ h2 {
   background-color: rgb(138, 7, 150);
 }
 .skill-card span{
-  color: rgb(17, 16, 16);
-  font-size: 22px;
+  color: rgb(247, 238, 238);
+  font-size: 23px;
   margin-bottom: 5px;
   text-transform:uppercase;
 }
@@ -364,7 +373,7 @@ h2 {
   justify-content: center;
   max-width: 1920px;
   flex-wrap: wrap;
-  margin: 50px auto;
+  margin:60px auto;
   gap: 50px;
 /*   border: 1px solid red; */
 }
@@ -373,7 +382,7 @@ h2 {
   flex-direction: column;
   align-items: center;
   background-color: white;
-  width: 450px;
+  width: 500px;
   border: 1px solid black;
   box-shadow: 2px 2px 5px black;
   text-align: left; /* Changed from center to left */
@@ -393,17 +402,21 @@ h2 {
   display: table-column;
   width: 100%;
   margin-bottom: 15px;
+  padding: 10px;
+  background-color: rgb(39, 38, 38);
+  border-radius: 10px;
   
 }
 .skill-bar-wrapper > .fab, .skill-bar-wrapper .fas {
-  font-size: 22px;
+  font-size: 23px;
   margin-right: 3%;
 }
 .bar-container {
-  height: 27px;
+  height: 28px;
   width: 90%;
   margin-left: 10px;
   border: 1px solid black;
+  background-color: white;
   border-radius: 20px;
   padding: 0px;
 }
@@ -415,9 +428,9 @@ h2 {
 }
 .bar > p {
   color: white;
-  font-size: 15px;
+  font-size: 18px;
   text-shadow: 2px 2px 5px black;
-  padding: 0;
+  padding: 2px;
   text-align: center; /* Needed if skill-card text-align is not set to center. */
   margin: auto;
 }
@@ -509,7 +522,7 @@ h2 {
   width: 100%;
   max-width: 500px;
   aspect-ratio: 16/9;
-  background-color: white;
+  background-color:white;
   box-shadow: 2px 2px 5px black;
   border: 1px solid black;
   transition: 0.3s ease-in-out;
@@ -535,7 +548,9 @@ h2 {
   color: white;
   transition: 0.5s ease-in-out;
 }
-
+.project-desc p{
+  padding: 15px;
+}
 .project-tile:hover .project-desc {
   opacity: 0.8;
 /*   cursor: pointer; --> Removed: pointer on non-clickable items is bad code  */
@@ -617,8 +632,8 @@ h2 {
 }
 @media only screen and (max-width: 1000px) {
   /* Post Production */
-  .project-tile {
-    max-width: none;
+  .skill-card{
+    max-width: 650px;
   }
   #cert-pill {
     display: none;
@@ -651,13 +666,13 @@ h2 {
 }
 @media only screen and (max-width: 550px) {
   #contact-section > p, contact-section > i {
-    font-size: 18px;
+    font-size: 28px;
   }
   .text-wrapper-desc {
     text-align: left;
   }
-  #skill-section .card-container {
-    margin: 10px auto;
+  .card-container {
+    margin:10px auto;
     gap: 20px;
   }
 }
@@ -802,7 +817,7 @@ section .title::after{
 }
 
 .education .box-container .box p{
-  font-size: 1.3rem;
+  font-size: 1.8rem;
   color:black;
   padding: 1rem 0;
 }
@@ -816,8 +831,8 @@ section .title::after{
 	margin-bottom: 30px;
 }
 .social-item {
-	height: 50px;
-	width: 50px;
+	height: 60px;
+	width: 60px;
 	margin: 0 5px;
 }
 .social-item img {
