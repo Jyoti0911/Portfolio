@@ -1,159 +1,205 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
 
 
-:root{
-  scroll-behavior: smooth;
-  overflow-y: scroll;
-  ms-overflow-style: none;
-  scrollbar-width: none;
-} 
-:root::-webkit-scrollbar{
-  display: none;
-} 
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
 }
-/*nav {
-  position: fixed;
-  z-index: 9;
-  background-color: black;
-  box-shadow: 2px 2px 5px black;
-  width: 100%;
+html {
+	font-size: 10px;
+	font-family: 'Montserrat', sans-serif;
+	scroll-behavior: smooth;
 }
-nav > ul {
-  display: flex;
-  flex-direction: row;
-  padding: 0;
-  margin: 0;
+a {
+	text-decoration: none;
 }
-.nav-pill {
-  flex: 1;
-  list-style-type: none;
-  padding: 15px;
-  text-align: center;
-  background-color: black;
-  transition: 0.3s ease-in-out;
+.container {
+	min-height: 100vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
-.nav-pill:hover {
-  transform: scale(1.1);
-  box-shadow: 3px 3px 6px black;
-  border: 1px solid white;
+img {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
 }
-.nav-pill-text{
-  color: white;
-  text-decoration: none;
-  font-size: 20px;
+p {
+	color: black;
+	font-size: 1.4rem;
+	margin-top: 5px;
+	line-height: 2.5rem;
+	font-weight: 300;
+	letter-spacing: 0.05rem;
 }
-.nav-pill-text:hover{
-  color:white;
-  animation-name: shadow;
-  animation-duration: 0.3s;
+.section-title {
+	font-size: 4rem;
+	font-weight: 300;
+	color: black;
+	margin-bottom: 10px;
+	text-transform: uppercase;
+	letter-spacing: 0.2rem;
+	text-align: center;
 }
-@keyframes shadow {
-  0% {
-    text-shadow: 2px 2px 5px white;
-  }
-  25% {
-    text-shadow: 2px 2px 10px white;
-  }
-  50% {
-    text-shadow: 2px 2px 15px white;
-  }
-  75% {
-    text-shadow: 2px 2px 50px white;
-  }
-  100% {
-    text-shadow: 2px 2px 100px white;
-  }
+.section-title span {
+	color: crimson;
 }
-*/
-/* Header section */
 
-/* navbar styling */
-.navbar{
-    position: fixed;
-    width: 100%;
-    z-index: 999;
-    padding: 30px 0;
-    font-family: 'Ubuntu', sans-serif;
-    transition: all 0.3s ease;
+.cta {
+	display: inline-block;
+	padding: 10px 30px;
+	color: white;
+	background-color: transparent;
+	border: 2px solid crimson;
+	font-size: 2rem;
+	text-transform: uppercase;
+	letter-spacing: 0.1rem;
+	margin-top: 30px;
+	transition: 0.3s ease;
+	transition-property: background-color, color;
 }
-.navbar.sticky{
-    padding: 15px 0;
-    background: crimson;
+.cta:hover {
+	color: white;
+	background-color: crimson;
 }
-.navbar .max-width{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.brand h1 {
+	font-size: 3rem;
+	text-transform: uppercase;
+	color: white;
 }
-.navbar .logo a{
-    color: #fff;
-    font-size: 35px;
-    font-weight: 600;
+.brand h1 span {
+	color: crimson;
 }
-.navbar .logo a span{
-    color: crimson;
-    transition: all 0.3s ease;
+
+/* Header section */
+#header {
+	position: fixed;
+	z-index: 1000;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: auto;
 }
-.navbar.sticky .logo a span{
-    color: #fff;
+#header .header {
+	min-height: 8vh;
+	background-color: rgba(31, 30, 30, 0.24);
+	transition: 0.3s ease background-color;
 }
-.navbar .menu li{
-    list-style: none;
-    display: inline-block;
+#header .nav-bar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	height: 100%;
+	max-width: 1300px;
+	padding: 0 10px;
 }
-.navbar .menu li a{
-    display: block;
-    color: #fff;
-    font-size: 18px;
-    font-weight: 500;
-    margin-left: 25px;
-    transition: color 0.3s ease;
+#header .nav-list ul {
+	list-style: none;
+	position: absolute;
+	background-color: rgb(31, 30, 30);
+	width: 100vw;
+	height: 100vh;
+	left: 100%;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 1;
+	overflow-x: hidden;
+	transition: 0.5s ease left;
 }
-.navbar .menu li a:hover{
-    color: crimson;
+#header .nav-list ul.active {
+	left: 0%;
 }
-.navbar.sticky .menu li a:hover{
-    color: #fff;
+#header .nav-list ul a {
+	font-size: 2.5rem;
+	font-weight: 500;
+	letter-spacing: 0.2rem;
+	text-decoration: none;
+	color: white;
+	text-transform: uppercase;
+	padding: 20px;
+	display: block;
 }
-/* menu btn styling */
-.menu-btn{
-    color: #fff;
-    font-size: 23px;
-    cursor: pointer;
-    display: none;
+#header .nav-list ul a::after {
+	content: attr(data-after);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%) scale(0);
+	color: rgba(240, 248, 255, 0.021);
+	font-size: 13rem;
+	letter-spacing: 50px;
+	z-index: -1;
+	transition: 0.3s ease letter-spacing;
 }
-.scroll-up-btn{
-    position: fixed;
-    height: 45px;
-    width: 42px;
-    background: crimson;
-    right: 30px;
-    bottom: 10px;
-    text-align: center;
-    line-height: 45px;
-    color: #fff;
-    z-index: 9999;
-    font-size: 30px;
-    border-radius: 6px;
-    border-bottom-width: 2px;
-    cursor: pointer;
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.3s ease;
+#header .nav-list ul li:hover a::after {
+	transform: translate(-50%, -50%) scale(1);
+	letter-spacing: initial;
 }
-.scroll-up-btn.show{
-    bottom: 30px;
-    opacity: 1;
-    pointer-events: auto;
+#header .nav-list ul li:hover a {
+	color: crimson;
 }
-.scroll-up-btn:hover{
-    filter: brightness(90%);
+#header .hamburger {
+	height: 60px;
+	width: 60px;
+	display: inline-block;
+	border: 3px solid white;
+	border-radius: 50%;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 100;
+	cursor: pointer;
+	transform: scale(0.8);
+	margin-right: 20px;
 }
+#header .hamburger:after {
+	position: absolute;
+	content: '';
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+	border: 3px solid white;
+	animation: hamburger_puls 1s ease infinite;
+}
+#header .hamburger .bar {
+	height: 2px;
+	width: 30px;
+	position: relative;
+	background-color: white;
+	z-index: -1;
+}
+#header .hamburger .bar::after,
+#header .hamburger .bar::before {
+	content: '';
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	background-color: white;
+	transition: 0.3s ease;
+	transition-property: top, bottom;
+}
+#header .hamburger .bar::after {
+	top: 8px;
+}
+#header .hamburger .bar::before {
+	bottom: 8px;
+}
+#header .hamburger.active .bar::before {
+	bottom: 0;
+}
+#header .hamburger.active .bar::after {
+	top: 0;
+}
+/* End Header section */
+
 /* home section styling */
 .home{
     display: flex;
